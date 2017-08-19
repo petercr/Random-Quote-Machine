@@ -1,68 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Random Quote Machine</title>
 
-        <!-- Call for jQuery 3.2.1 -->
-        <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Quote Machine</title>
 
-        <!-- Bootstrap 4.0 beta  -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    </head>
+    <!-- Call for jQuery 3.2.1 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <body>
-        <div class="container-fluid">
-            <div class="showcase">
-                <h2>Random Quote Machine</h2>
-                <p id="quotes">The quote goes here...</p>
-                <button type="button">New Quote</button>
-                <div class="btn">Tweet This</div> 
-                <div class="btn">Share on FB</div>
+    <!-- Bootstrap 4.0 beta  -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
 
-            </div>
-            <footer>
-                <p>Made By Peter Cr</p>
-                <button class="btn">Twitter</button>
-                <button class="btn">LinkedIn</button>
-            </footer>
+<body>
+    <div class="container-fluid">
+        <div class="showcase">
+            <h2>Random Quote Machine</h2>
+            <p id="quotes">The quote goes here...</p>
+            <button type="button">New Quote</button>
+            <div class="btn">Tweet This</div>
+            <div class="btn">Share on FB</div>
 
         </div>
+        <footer>
+            <p>Made By Peter Cr</p>
+            <button class="btn">Twitter</button>
+            <button class="btn">LinkedIn</button>
+        </footer>
 
-        <script>
-           $('#get-another-quote-button').on('click', function(e) {
-    e.preventDefault();
-    $.ajax( {
-      url: '/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-      success: function(data) {
-        var post = data.shift(); // The data is an array of posts. Grab the first one.
-        $('#quote-title').text(post.title);
-        $('#quote-content').html(post.content);
+    </div>
 
-        // If the Source is available, use it. Otherwise hide it.
-        if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
-          $('#quote-source').html('Source:' + post.custom_meta.Source);
-        } else {
-          $('#quote-source').text('');
-        }
-      },
-      cache: false
-    });
-  });
+    <script>
+        $('#get-another-quote-button').on('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+                success: function(data) {
+                    var post = data.shift(); // The data is an array of posts. Grab the first one.
+                    $('#quote-title').text(post.title);
+                    $('#quote-content').html(post.content);
 
-           
-           
-  $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-    $("#quotes").append(a[0].content + "<p>— " + a[0].title + "</p>")
-  });
+                    // If the Source is available, use it. Otherwise hide it.
+                    if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
+                        $('#quote-source').html('Source:' + post.custom_meta.Source);
+                    } else {
+                        $('#quote-source').text('');
+                    }
+                },
+                cache: false
+            });
+        });
 
-        </script>
-    </body>
+
+
+        $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+            $("#showcase").append(p[0].content + " " + a[0].title + " ")
+        });
+    </script>
+</body>
 
 
 </html>
