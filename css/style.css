@@ -1,11 +1,8 @@
 body {
     padding: 25px;
-    margin: 25px;
-}
-
-.showcase {
     padding-left: 25px;
-    padding-bottom: 40px;
+    padding-right: 25px;
+    margin: 25px;
 }
 
 .btn {
