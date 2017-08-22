@@ -6,6 +6,7 @@ body {
 .showcase {
     height: 100%;
     color: #FFFFFF;
+    font-family: 'Quicksand', sans-serif;
     padding-bottom: 25px;
     background: blue;
     /* For browsers that do not support gradients */
@@ -29,4 +30,9 @@ body {
 p #author {
     padding-bottom: 800px;
     padding-top: 40px;
+}
+
+.bottom p {
+    font-family: 'VT323', monospace;
+    font-size: 1.25em;
 }
