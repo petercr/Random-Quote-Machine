@@ -5,6 +5,8 @@ body {
 
 .showcase {
     height: 100%;
+    color: #FFFFFF;
+    padding-bottom: 25px;
     background: blue;
     /* For browsers that do not support gradients */
     background: linear-gradient(-45deg, blue, green, black);
@@ -15,6 +17,16 @@ body {
     background: -moz-linear-gradient(-45deg, blue, green, black);
 }
 
+.showcase h2 {
+    padding-top: 40px;
+    padding-bottom: 25px;
+}
+
 .btn {
     padding: 10px;
+}
+
+p #author {
+    padding-bottom: 800px;
+    padding-top: 40px;
 }
