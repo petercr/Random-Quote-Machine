@@ -21,7 +21,7 @@
 
 <body>
     <div class="container-fluid showcase">
-        <div class=" text-center mb-2">
+        <div class=" text-center mb-2" id="top">
             <h2>Random Quote Machine</h2>
             <p id="quotes"></p>
             <p id="author"></p>
@@ -54,6 +54,7 @@
                     $("#author").hide().fadeIn(500).html("- " + data.quoteAuthor);
                     randomVar = data.quoteText;
                 });
+
             }
             //using twitter click functionality  
             $('#tweet').on("click", function() {

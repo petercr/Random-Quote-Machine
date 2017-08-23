@@ -27,8 +27,8 @@ body {
     padding: 10px;
 }
 
-p #author {
-    padding-bottom: 800px;
+#author {
+    height: 25vh;
     padding-top: 40px;
 }
 
