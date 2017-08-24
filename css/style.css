@@ -10,12 +10,12 @@ body {
     padding-bottom: 25px;
     background: blue;
     /* For browsers that do not support gradients */
-    background: linear-gradient(-45deg, blue, green, black);
-    background: -webkit-linear-gradient(-45deg, blue, green, black);
+    background: linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+    background: -webkit-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(-45deg, blue, green, black);
+    background: -o-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(-45deg, blue, green, black);
+    background: -moz-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
 }
 
 .showcase h2 {
