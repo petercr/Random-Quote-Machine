@@ -18,7 +18,7 @@ body {
 }
 
 .showcase p {
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .btn {
@@ -28,6 +28,11 @@ body {
 #author {
     height: 25vh;
     padding-top: 40px;
+}
+
+.bottom {
+    padding: 0;
+    margin: 0;
 }
 
 .bottom p {
@@ -45,4 +50,16 @@ body {
     background: -o-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
     /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+}
+
+.bg2 {
+    background: #667db6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -o-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
 }
