@@ -32,6 +32,7 @@
 
 
             <div class="bottom bg1">
+                <br>
                 <p>Made By Peter Cruckshank</p>
                 <button class="btn">Twitter</button>
                 <button class="btn">LinkedIn</button>
@@ -63,8 +64,10 @@
             });
             $("#new-quote").on("click", function() {
                 getQuote();
-                /*  $('#showcase').removeClass('bg1');
-                $('#showcase').addClass('bg2');  */
+                $('#showcase').removeClass('bg1');
+                $('#showcase').addClass('bg2');
+                $('.bottom').removeClass('bg1');
+                $('.bottom').addClass('bg2');
             });
         });
     </script>
