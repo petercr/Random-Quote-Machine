@@ -43,13 +43,20 @@ body {
 
 /* Classes for the gradient backgrounds */
 
+
+/* Provided by https://uigradients.com */
+
 .bg1 {
-    background: linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
-    background: -webkit-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
-    /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+    /* Summer */
+    background: #22c1c3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #22c1c3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -o-linear-gradient(to right, #fdbb2d, #22c1c3);
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+    background: -moz-linear-gradient(to right, #fdbb2d, #22c1c3);
 }
 
 .bg2 {
@@ -62,4 +69,30 @@ body {
     background: -o-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
     /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+}
+
+.bg3 {
+    /* Shahabi */
+    background: #a80077;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #66ff00, #a80077);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #66ff00, #a80077);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -o-linear-gradient(to right, #66ff00, #a80077);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right, #66ff00, #a80077);
+}
+
+.bg4 {
+    /* CanYouFeelTheLoveTonight */
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -o-linear-gradient(to right, #B06AB3, #4568DC);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right, #B06AB3, #4568DC);
 }
