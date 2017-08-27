@@ -92,7 +92,7 @@
                     //passing value to corresponding div
                     $("#quotes").hide().fadeIn(1000).html('"' + data.quoteText + '"');
                     $("#author").hide().fadeIn(500).html("- " + data.quoteAuthor);
-                    randomVar = data.quoteText;
+                    randomVar = data.quoteText + '  -' + data.quoteAuthor;
                 });
 
             }
