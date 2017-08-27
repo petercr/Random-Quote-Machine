@@ -33,6 +33,7 @@ body {
 .bottom {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .bottom p {
