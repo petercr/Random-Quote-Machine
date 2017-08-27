@@ -41,10 +41,49 @@
     </div>
 
     <script>
-        /*      background: linear-gradient(to right, rgb(116, 235, 213), rgb(172, 182, 229)); */
+
         $(document).ready(function() {
             var randomVar;
+            let count = 0;
             getQuote();
+
+            function changeBackground(num){
+              /* Changes the background class of the 2 main <div> sections*/
+                switch (num) {
+                  case 1:
+                    $('#showcase').removeClass('bg1');
+                    $('#showcase').addClass('bg2');
+                    $('.bottom').removeClass('bg1');
+                    $('.bottom').addClass('bg2');
+                    count++;
+                    break;
+                  case 2:
+                    $('#showcase').removeClass('bg2');
+                    $('#showcase').addClass('bg3');
+                    $('.bottom').removeClass('bg2');
+                    $('.bottom').addClass('bg3');
+                    count++;
+                    break;
+                  case 3:
+                    $('#showcase').removeClass('bg3');
+                    $('#showcase').addClass('bg4');
+                    $('.bottom').removeClass('bg3');
+                    $('.bottom').addClass('bg4');
+                    count++;
+                    break;
+                  case 4:
+                    $('#showcase').removeClass('bg4');
+                    $('#showcase').addClass('bg1');
+                    $('.bottom').removeClass('bg4');
+                    $('.bottom').addClass('bg1');
+                    count = 0;
+                    break;
+                  default:
+                    count++;
+
+
+                }
+            }
 
             function getQuote() {
                 var url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
@@ -58,16 +97,14 @@
                 });
 
             }
-            //using twitter click functionality  
+            //using twitter click functionality
             $('#tweet').on("click", function() {
                 window.open("https://twitter.com/intent/tweet?text=" + randomVar);
             });
             $("#new-quote").on("click", function() {
                 getQuote();
-                $('#showcase').removeClass('bg1');
-                $('#showcase').addClass('bg2');
-                $('.bottom').removeClass('bg1');
-                $('.bottom').addClass('bg2');
+                changeBackground(count);
+
             });
         });
     </script>
