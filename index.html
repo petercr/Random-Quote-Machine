@@ -37,8 +37,8 @@
             <div class="bottom bg1">
                 <br>
                 <p>Made By Peter Cruckshank</p>
-                <button class="btn"><a href="https://twitter.com/PeteCapeCod"></a><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></button>
-                <button class="btn"><a href="https://www.linkedin.com/in/peter-cruckshank-25022a141/"></a><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" id="twitter"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" id="linkedIn"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
@@ -102,6 +102,15 @@
             //using twitter click functionality
             $('#tweet').on("click", function() {
                 window.open("https://twitter.com/intent/tweet?text=" + randomVar);
+            });
+            $('#like').on("click", function() {
+                window.open("https://github.com/petercr/Random-Quote-Machine");
+            });
+            $('#twitter').on("click", function() {
+                window.open("https://twitter.com/PeteCapeCod");
+            });
+            $('#linkedIn').on("click", function() {
+                window.open("https://www.linkedin.com/in/peter-cruckshank-25022a141/");
             });
             $("#new-quote").on("click", function() {
                 getQuote();
