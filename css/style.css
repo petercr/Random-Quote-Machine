@@ -25,7 +25,13 @@ body {
     padding: 10px;
 }
 
-#like {}
+#like:hover {
+    color: #000000;
+}
+
+#tweet:hover {
+    color: #000000;
+}
 
 #author {
     height: 20vh;
