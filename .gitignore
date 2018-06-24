@@ -1,0 +1,2 @@
+# Exclude all npm node modules
+random-quote/node_modules/
