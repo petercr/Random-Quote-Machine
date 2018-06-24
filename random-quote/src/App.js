@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="quote-box">
+        <div className="top-section">
+          <p id="text">Some cool quote...</p>
+          <p id="author">The one who thought it up..?!</p>
+        </div>
+        <div className="bottom-section">
+        <button id="new-quote">New Quote</button>
+        <button id="tweet-quote">Tweet this quote!!</button>
+        </div>
       </div>
     );
   }
