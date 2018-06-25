@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import './index.css';
 import './App.css';
 
+constructor() {
+  super();
+  this.state = {
+    quote: '',
+    author: ''
+  }
+}
+
 class App extends Component {
   render() {
     return (
