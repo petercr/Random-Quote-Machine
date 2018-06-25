@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  /* temp assignment */
-  height: 50vh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
 
@@ -14,15 +13,14 @@
 .top-section {
   background: #f4f4f4;
   width: 50%;
-  height: 50%;
+  height: 25%;
   text-align: center;
-  margin-top: 100px;
 }
 
 .bottom-section {
   background: black;
   width: 50%;
-  height: 50%;
+  height: 25%;
   display: flex;
   flex-direction: row;
   justify-content: center;
