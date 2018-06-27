@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import "./App.css";
 
-class App extends Component {
+class App extends Component  {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,25 +14,23 @@ class App extends Component {
   }
 
   getQuote() {
-    const url =
+    const wikiUrl =
       `https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?`;
     //get data from this url
-    console.log(url);
+    // console.log(wikiUrl);
 
-    fetch(url)
-      .then(response => response.json())
+    let testData;
+
+    fetch(wikiUrl, {mode: 'no-cors'})
+      .then((results) => {
+        return results.json();
+      })
       .then(function(data) {
-        console.table(data);
+         console.table(data);
+         testData = data;
       })
       .catch(error => console.error(error));
-
-    // $.getJSON(url, function(data) {
-    //     randomVar = data.quoteText;
-    //     //passing value to corresponding div
-    //     $("#quotes").hide().fadeIn(1000).html('"' + data.quoteText + '"');
-    //     $("#author").hide().fadeIn(500).html("- " + data.quoteAuthor);
-    //     randomVar = data.quoteText + '  -' + data.quoteAuthor;
-    // });
+      console.table(testData);
   }
 
   testCase() {
@@ -48,7 +46,7 @@ class App extends Component {
           <p id="author">The one who thought it up..?!</p>
         </div>
         <div className="bottom-section">
-          <button id="new-quote" onClick="this.testCase">New Quote</button>
+          <button id="new-quote" onClick={this.getQuote}>New Quote</button>
           <button id="tweet-quote">Tweet this quote!!</button>
         </div>
       </div>
