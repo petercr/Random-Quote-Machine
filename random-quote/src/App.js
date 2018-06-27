@@ -15,7 +15,7 @@ class App extends Component  {
 
   getQuote() {
     const wikiUrl =
-      `https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?`;
+      `https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json&json=?`;
     //get data from this url
     // console.log(wikiUrl);
 
@@ -26,7 +26,7 @@ class App extends Component  {
         return results.json();
       })
       .then(function(data) {
-         console.table(data);
+         console.log(data);
          testData = data;
       })
       .catch(error => console.error(error));
