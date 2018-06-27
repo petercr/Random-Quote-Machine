@@ -14,15 +14,14 @@ class App extends Component  {
   }
 
   getQuote() {
-    const wikiUrl =
-      `https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json&json=?`;
+    const wikiUrl =`https://talaikis.com/api/quotes/random/ `;
     //get data from this url
     // console.log(wikiUrl);
 
     let testData;
 
-    fetch(wikiUrl, {mode: 'no-cors'})
-      .then((results) => {
+    fetch(wikiUrl)
+      .then(results => {
         return results.json();
       })
       .then(function(data) {
@@ -47,7 +46,7 @@ class App extends Component  {
         </div>
         <div className="bottom-section">
           <button id="new-quote" onClick={this.getQuote}>New Quote</button>
-          <button id="tweet-quote">Tweet this quote!!</button>
+          <button id="tweet-quote" onClick={this.testCase}>Tweet this quote!!</button>
         </div>
       </div>
     );
