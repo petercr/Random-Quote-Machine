@@ -18,7 +18,10 @@ class App extends Component  {
     //get data from this url
     // console.log(wikiUrl);
 
-    let testData;
+    // variables for both buttons
+    const quote = document.getElementById('text');
+    const author = document.getElementById('author');
+
 
     fetch(wikiUrl)
       .then(results => {
@@ -26,7 +29,9 @@ class App extends Component  {
       })
       .then(function(data) {
          console.log(data);
-         testData = data;
+         quote.innerText = data.quote;
+         author.innerText = data.author;
+
       })
       .catch(error => console.error(error));
       console.table(testData);
