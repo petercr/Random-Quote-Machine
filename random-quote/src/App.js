@@ -34,12 +34,19 @@ class App extends Component  {
 
       })
       .catch(error => console.error(error));
-      console.table(testData);
   }
 
   tweetQuote() {
-    // get both the 
-    console.log("hello everybody");
+    // get both the quote text and author from DOM
+    const quote = document.getElementById('text').innerText;
+    const author = document.getElementById('author').innerText;
+    let tweetUrl = '';
+
+    const linkQuote = quote.replace(/\s/g, "+");
+    // console.dir( linkQuote );
+    const linkAuthor = "+" + "Author:" + author.replace(/\s/g, "+");
+    tweetUrl = linkQuote + linkAuthor;
+    console.log(tweetUrl);
   }
 
 
