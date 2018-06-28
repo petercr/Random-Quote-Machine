@@ -10,7 +10,7 @@ class App extends Component  {
       author: "Me"
     };
     this.getQuote = this.getQuote.bind(this);
-    this.testCase = this.testCase.bind(this);
+    this.tweetQuote = this.tweetQuote.bind(this);
   }
 
   getQuote() {
@@ -37,7 +37,8 @@ class App extends Component  {
       console.table(testData);
   }
 
-  testCase() {
+  tweetQuote() {
+    // get both the 
     console.log("hello everybody");
   }
 
@@ -51,7 +52,7 @@ class App extends Component  {
         </div>
         <div className="bottom-section">
           <button id="new-quote" onClick={this.getQuote}>New Quote</button>
-          <button id="tweet-quote" onClick={this.testCase}>Tweet this quote!!</button>
+          <button id="tweet-quote" onClick={this.tweetQuote}>Tweet this quote!!</button>
         </div>
       </div>
     );
