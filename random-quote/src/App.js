@@ -29,8 +29,10 @@ class App extends Component  {
       })
       .then(function(data) {
          console.log(data);
-         quote.innerText = data.quote;
-         author.innerText = data.author;
+        //  quote.innerText = data.quote;
+        //  author.innerText = data.author;
+
+        
 
       })
       .catch(error => console.error(error));
@@ -44,7 +46,7 @@ class App extends Component  {
 
     const linkQuote = quote.replace(/\s/g, "+");
     // console.dir( linkQuote );
-    const linkAuthor = "+" + "Author:" + author.replace(/\s/g, "+");
+    const linkAuthor = "+Author:" + author.replace(/\s/g, "+");
     tweetUrl = linkQuote + linkAuthor;
     console.log(tweetUrl);
   }
@@ -58,8 +60,8 @@ class App extends Component  {
           <p id="author">The one who thought it up..?!</p>
         </div>
         <div className="bottom-section">
-          <button id="new-quote" onClick={this.getQuote}>New Quote</button>
-          <button id="tweet-quote" onClick={this.tweetQuote}>Tweet this quote!!</button>
+          <button id="new-quote" onClick={this.getQuote}>{this.state.quote}</button>
+          <button id="tweet-quote" onClick={this.tweetQuote}>{this.state.author}</button>
         </div>
       </div>
     );
