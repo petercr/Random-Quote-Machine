@@ -15,23 +15,21 @@ class App extends Component  {
 
   getQuote() {
     const wikiUrl =`https://talaikis.com/api/quotes/random/ `;
-    //get data from this url
+    // eslint-disable-next-line
     // console.log(wikiUrl);
-
-    // variables for both buttons
-    const quote = document.getElementById('text');
-    const author = document.getElementById('author');
 
 
     fetch(wikiUrl)
       .then(results => {
         return results.json();
       })
-      .then(function(data) {
+      .then((data) => {
+        // eslint-disable-next-line
          console.log(data);
-        //  quote.innerText = data.quote;
-        //  author.innerText = data.author;
 
+        // update the state with return API data
+        this.setState({quote: data.quote});
+        this.setState({author: data.author});
         
 
       })
@@ -52,9 +50,10 @@ class App extends Component  {
   }
 
 
+
   render() {
     return (
-      <div id="quote-box" >
+      <div id="quote-box">
         <div className="top-section">
           <p id="text">{this.state.quote}</p>
           <p id="author">{this.state.author}</p>
