@@ -56,12 +56,12 @@ class App extends Component  {
     return (
       <div id="quote-box" >
         <div className="top-section">
-          <p id="text">Some cool quote...</p>
-          <p id="author">The one who thought it up..?!</p>
+          <p id="text">{this.state.quote}</p>
+          <p id="author">{this.state.author}</p>
         </div>
         <div className="bottom-section">
-          <button id="new-quote" onClick={this.getQuote}>{this.state.quote}</button>
-          <button id="tweet-quote" onClick={this.tweetQuote}>{this.state.author}</button>
+          <button id="new-quote" onClick={this.getQuote}>New Quote</button>
+          <button id="tweet-quote" onClick={this.tweetQuote}>Tweet this quote!</button>
         </div>
       </div>
     );
