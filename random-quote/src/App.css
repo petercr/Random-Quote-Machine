@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+.top-section p {
+  padding-top: 20px;
+}
+
 .bottom-section {
   background: black;
   width: 50%;
@@ -27,6 +31,10 @@
   align-items: center;
 }
 
-.bottom-section button {
+.bottom-section a {
   margin-right: 25px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  padding: 5px;
 }
