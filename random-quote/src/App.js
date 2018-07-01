@@ -7,7 +7,7 @@ class App extends Component  {
     super(props);
     this.state = {
       quote: "Cool Stuff",
-      author: "Me"
+      author: "Me" 
     };
     this.getQuote = this.getQuote.bind(this);
     this.tweetQuote = this.tweetQuote.bind(this);
@@ -15,9 +15,6 @@ class App extends Component  {
 
   getQuote() {
     const wikiUrl =`https://talaikis.com/api/quotes/random/ `;
-    // eslint-disable-next-line
-    // console.log(wikiUrl);
-
 
     fetch(wikiUrl)
       .then(results => {
@@ -38,15 +35,19 @@ class App extends Component  {
 
   tweetQuote() {
     // get both the quote text and author from DOM
-    const quote = document.getElementById('text').innerText;
-    const author = document.getElementById('author').innerText;
+    const quote = this.state.quote;
+    const author = this.state.author;
     let tweetUrl = '';
 
     const linkQuote = quote.replace(/\s/g, "+");
-    // console.dir( linkQuote );
-    const linkAuthor = "+Author:" + author.replace(/\s/g, "+");
+    const linkAuthor = "+Author:+" + author.replace(/\s/g, "+");
     tweetUrl = linkQuote + linkAuthor;
     console.log(tweetUrl);
+    window.open(`https://twitter.com/intent/tweet?text=${tweetUrl}`);
+  }
+
+  componentDidMount() {
+    this.getQuote();
   }
 
 
@@ -60,7 +61,7 @@ class App extends Component  {
         </div>
         <div className="bottom-section">
           <button id="new-quote" onClick={this.getQuote}>New Quote</button>
-          <button id="tweet-quote" onClick={this.tweetQuote}>Tweet this quote!</button>
+          <button id="tweet-quote" onClick={this.tweetQuote} className="twitter-share-button" >Tweet this quote!</button>
         </div>
       </div>
     );
