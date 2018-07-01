@@ -33,7 +33,8 @@ class App extends Component  {
       .catch(error => console.error(error));
   }
 
-  tweetQuote() {
+  tweetQuote(e) {
+    e.preventDefault();
     // get both the quote text and author from DOM
     const quote = this.state.quote;
     const author = this.state.author;
@@ -60,8 +61,8 @@ class App extends Component  {
           <p id="author">{this.state.author}</p>
         </div>
         <div className="bottom-section">
-          <button id="new-quote" onClick={this.getQuote}>New Quote</button>
-          <button id="tweet-quote" onClick={this.tweetQuote} className="twitter-share-button" >Tweet this quote!</button>
+          <a id="new-quote" onClick={this.getQuote}>New Quote</a>
+          <a id="tweet-quote" href="twitter.com/intent/tweet" onClick={this.tweetQuote} className="twitter-share-button" >Tweet this quote!</a>
         </div>
       </div>
     );
