@@ -1,0 +1,40 @@
+/* Styling by ID attribute */
+#quote-box {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Styling by class */
+.top-section {
+  background: #f4f4f4;
+  width: 50%;
+  height: 25%;
+  text-align: center;
+}
+
+.top-section p {
+  padding-top: 20px;
+}
+
+.bottom-section {
+  background: black;
+  width: 50%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-section a {
+  margin-right: 25px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  padding: 5px;
+}
