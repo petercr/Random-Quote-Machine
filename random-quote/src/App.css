@@ -1,3 +1,9 @@
+/* Global Styling for page */
+a:hover {
+  cursor: pointer;
+}
+
+
 /* Styling by ID attribute */
 #quote-box {
   display: flex;
@@ -19,6 +25,8 @@
 
 .top-section p {
   padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .bottom-section {
@@ -37,4 +45,32 @@
   background: #ffffff;
   color: #000000;
   padding: 5px;
+  cursor: pointer;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 750px) {
+  .top-section {
+    width: 75%;
+    height: 30%;
+  }
+  .bottom-section {
+    width: 75%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-section {
+    width: 90%;
+    height: 30%;
+  }
+  .bottom-section {
+    width: 90%;
+    height: 30%;
+  }
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
