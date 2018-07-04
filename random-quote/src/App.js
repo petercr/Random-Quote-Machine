@@ -33,6 +33,8 @@ class App extends Component  {
 
       })
       .catch(error => console.error(error));
+    this.changeBg();
+
   }
 
   tweetQuote(e) {
@@ -50,7 +52,20 @@ class App extends Component  {
   }
 
   changeBg() {
-    console.log(this.background);
+    const background = this.state.background;
+    console.log(background);
+    if (background === "bg1"){
+      this.setState({background: "bg2"});
+    }
+    else if (background === "bg2") {
+      this.setState({background: "bg3"});
+    }
+    else if (background === "bg3") {
+      this.setState({background: "bg4"});
+    }
+    else {
+      this.setState({background: "bg1"});
+    }
   }
 
   componentDidMount() {
