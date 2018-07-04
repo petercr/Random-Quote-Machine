@@ -8,7 +8,7 @@ class App extends Component  {
     this.state = {
       quote: "Cool Stuff",
       author: "Me",
-      background: 1 
+      background: "bg1" 
     };
     this.getQuote = this.getQuote.bind(this);
     this.tweetQuote = this.tweetQuote.bind(this);
@@ -50,7 +50,7 @@ class App extends Component  {
   }
 
   changeBg() {
-
+    console.log(this.background);
   }
 
   componentDidMount() {
@@ -61,7 +61,7 @@ class App extends Component  {
 
   render() {
     return (
-      <div id="quote-box">
+      <div id="quote-box" className={this.state.background} >
         <div className="top-section">
           <p id="text">{this.state.quote}</p>
           <p id="author">{this.state.author}</p>
