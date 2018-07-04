@@ -75,6 +75,21 @@ a:hover {
   }
 }
 
+@media (max-width: 800px) and (orientation: landscape) {
+  .top-section {
+    width: 90%;
+    height: 45%;
+  }
+  .bottom-section {
+    width: 90%;
+    height: 40%;
+  }
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /* Classes for the gradient backgrounds */
 /* Provided by https://uigradients.com */
 
