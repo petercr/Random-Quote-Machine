@@ -7,10 +7,12 @@ class App extends Component  {
     super(props);
     this.state = {
       quote: "Cool Stuff",
-      author: "Me" 
+      author: "Me",
+      background: 1 
     };
     this.getQuote = this.getQuote.bind(this);
     this.tweetQuote = this.tweetQuote.bind(this);
+    this.changeBg = this.changeBg.bind(this);
   }
 
   getQuote() {
@@ -45,6 +47,10 @@ class App extends Component  {
     tweetUrl = linkQuote + linkAuthor;
     console.log(tweetUrl);
     window.open(`https://twitter.com/intent/tweet?text=${tweetUrl}`);
+  }
+
+  changeBg() {
+
   }
 
   componentDidMount() {
