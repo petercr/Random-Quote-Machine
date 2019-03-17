@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "./index.css";
 import "./App.css";
 
-class App extends Component  {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       quote: "Cool Stuff",
       author: "Me",
-      background: "bg1" 
+      background: "bg1"
     };
     this.getQuote = this.getQuote.bind(this);
     this.tweetQuote = this.tweetQuote.bind(this);
@@ -16,25 +16,25 @@ class App extends Component  {
   }
 
   getQuote() {
-    const wikiUrl =`https://talaikis.com/api/quotes/random/ `;
+    const wikiUrl =
+      "https://quotesondesign.com//wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+    const headers = { mode: "no-cors" };
 
     fetch(wikiUrl)
-      .then(results => {
-        return results.json();
+      .then(res => {
+        return res.json();
       })
-      .then((data) => {
+      .then(data => {
         // eslint-disable-next-line
-         console.log(data);
+        console.log(data);
+        const post = data.shift();
 
         // update the state with return API data
-        this.setState({quote: data.quote});
-        this.setState({author: data.author});
-        
-
+        this.setState({ quote: post.content });
+        this.setState({ author: post.title });
       })
       .catch(error => console.error(error));
     this.changeBg();
-
   }
 
   tweetQuote(e) {
@@ -42,7 +42,7 @@ class App extends Component  {
     // get both the quote text and author from DOM
     const quote = this.state.quote;
     const author = this.state.author;
-    let tweetUrl = '';
+    let tweetUrl = "";
 
     const linkQuote = quote.replace(/\s/g, "+");
     const linkAuthor = "+Author:+" + author.replace(/\s/g, "+");
@@ -54,17 +54,14 @@ class App extends Component  {
   changeBg() {
     const background = this.state.background;
     console.log(background);
-    if (background === "bg1"){
-      this.setState({background: "bg2"});
-    }
-    else if (background === "bg2") {
-      this.setState({background: "bg3"});
-    }
-    else if (background === "bg3") {
-      this.setState({background: "bg4"});
-    }
-    else {
-      this.setState({background: "bg1"});
+    if (background === "bg1") {
+      this.setState({ background: "bg2" });
+    } else if (background === "bg2") {
+      this.setState({ background: "bg3" });
+    } else if (background === "bg3") {
+      this.setState({ background: "bg4" });
+    } else {
+      this.setState({ background: "bg1" });
     }
   }
 
@@ -72,18 +69,26 @@ class App extends Component  {
     this.getQuote();
   }
 
-
-
   render() {
+    const quote = this.state.quote;
     return (
-      <div id="quote-box" className={this.state.background} >
+      <div id="quote-box" className={this.state.background}>
         <div className="top-section">
-          <p id="text">{this.state.quote}</p>
+          <div id="text">{quote}</div>
           <p id="author">{this.state.author}</p>
         </div>
         <div className="bottom-section">
-          <a id="new-quote" onClick={this.getQuote}>New Quote</a>
-          <a id="tweet-quote" href="twitter.com/intent/tweet" onClick={this.tweetQuote} className="twitter-share-button" >Tweet this quote!</a>
+          <a id="new-quote" onClick={this.getQuote}>
+            New Quote
+          </a>
+          <a
+            id="tweet-quote"
+            href="twitter.com/intent/tweet"
+            onClick={this.tweetQuote}
+            className="twitter-share-button"
+          >
+            Tweet this quote!
+          </a>
         </div>
       </div>
     );
