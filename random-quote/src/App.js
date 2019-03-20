@@ -18,7 +18,6 @@ class App extends Component {
   getQuote() {
     const wikiUrl =
       "https://quotesondesign.com//wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-    const headers = { mode: "no-cors" };
 
     fetch(wikiUrl)
       .then(res => {
@@ -26,8 +25,8 @@ class App extends Component {
       })
       .then(data => {
         // eslint-disable-next-line
-        console.log(data);
         const post = data.shift();
+        console.log(post);
 
         // update the state with return API data
         this.setState({ quote: post.content });
@@ -70,11 +69,11 @@ class App extends Component {
   }
 
   render() {
-    const quote = this.state.quote;
+    const quote = { __html: this.state.quote };
     return (
       <div id="quote-box" className={this.state.background}>
         <div className="top-section">
-          <div id="text">{quote}</div>
+          <div id="text" dangerouslySetInnerHTML={quote} />
           <p id="author">{this.state.author}</p>
         </div>
         <div className="bottom-section">
